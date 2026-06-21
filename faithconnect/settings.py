@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'faithconnect_db',
         'USER': 'faithconnect_user',
         'PASSWORD': 'Faith@2025',
-        'HOST': 'localhost',
+        'HOST': '172.17.0.1',
         'PORT': '3306',
     }
 }
@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC'               
 
 USE_I18N = True
 
