@@ -6,46 +6,39 @@
     <title>FaithConnect - Announcements</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f7fa; min-height: 100vh; }
+        body { font-family: Arial, sans-serif; background: #0a0e1a; min-height: 100vh; color: #e0eaf5; }
         .navbar {
-            background: #2E4057;
+            background: #111827;
             padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 2px solid #f0c040;
         }
-        .navbar h1 { color: white; font-size: 22px; }
-        .navbar .nav-links a {
-            color: white;
+        .navbar h1 { color: #f0c040; font-size: 22px; }
+        .nav-links a {
+            color: #c0d0e0;
             text-decoration: none;
             margin-left: 20px;
             font-size: 14px;
         }
-        .navbar .nav-links a:hover { color: #f0c040; }
+        .nav-links a:hover { color: #f0c040; }
         .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .page-title { color: #2E4057; font-size: 26px; margin-bottom: 25px; }
+        .page-title { color: #f0c040; font-size: 26px; margin-bottom: 25px; }
         .announcement-item {
-            background: white;
+            background: #111827;
             border-radius: 12px;
             padding: 25px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border-left: 5px solid #2E4057;
+            border: 1px solid #1e2d4a;
+            border-left: 5px solid #f0c040;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-        .announcement-item h3 { color: #2E4057; font-size: 18px; margin-bottom: 10px; }
-        .announcement-item p { color: #444; font-size: 15px; line-height: 1.7; }
-        .announcement-item .meta {
-            margin-top: 12px;
-            font-size: 12px;
-            color: #aaa;
-        }
-        .empty { color: #aaa; font-size: 15px; text-align: center; margin-top: 60px; }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #aaa;
-            font-size: 13px;
-        }
+        .announcement-item h3 { color: #f0c040; font-size: 18px; margin-bottom: 10px; }
+        .announcement-item p { color: #c0d0e0; font-size: 15px; line-height: 1.7; }
+        .announcement-item .meta { margin-top: 12px; font-size: 12px; color: #445566; }
+        .empty { color: #445566; font-size: 15px; text-align: center; margin-top: 60px; }
+        footer { text-align: center; padding: 20px; color: #445566; font-size: 13px; border-top: 1px solid #1e2d4a; margin-top: 30px; }
     </style>
 </head>
 <body>
@@ -55,10 +48,10 @@
             <a href="/dashboard/">Home</a>
             <a href="/prayer/">Prayer Requests</a>
             <a href="/chatbot/">AI Chatbot</a>
+            <a href="/announcements/">Announcements</a>
             <a href="/logout/">Logout</a>
         </div>
     </nav>
-
     <div class="container">
         <h2 class="page-title">📢 Announcements</h2>
         {% if announcements %}
@@ -67,7 +60,7 @@
                 <h3>{{ announcement.title }}</h3>
                 <p>{{ announcement.message }}</p>
                 <div class="meta">
-                    Posted by <strong>{{ announcement.created_by.username }}</strong>
+                    Posted by <strong style="color:#f0c040;">{{ announcement.created_by.username }}</strong>
                     on {{ announcement.created_at|date:"d M Y, H:i" }}
                 </div>
             </div>
@@ -76,6 +69,6 @@
             <p class="empty">No announcements yet. Check back soon!</p>
         {% endif %}
     </div>
-    <footer>✝ FaithConnect — Zetech University DAC Project © 2025</footer>
+    <footer>✝ FaithConnect.ke — Zetech University DAC Project © 2025</footer>
 </body>
 </html>

@@ -8,60 +8,67 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: #0a0e1a;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .container {
-            background: white;
+            background: #111827;
             padding: 40px;
             border-radius: 15px;
             width: 100%;
             max-width: 400px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 1px solid #1e2d4a;
         }
         .logo { text-align: center; margin-bottom: 30px; }
-        .logo h1 { color: #2E4057; font-size: 28px; }
-        .logo p { color: #888; font-size: 14px; }
+        .logo h1 { color: #f0c040; font-size: 28px; }
+        .logo p { color: #8899aa; font-size: 14px; margin-top: 5px; }
         .form-group { margin-bottom: 20px; }
-        label { display: block; color: #2E4057; font-weight: bold; margin-bottom: 8px; }
+        label { display: block; color: #c0d0e0; font-weight: bold; margin-bottom: 8px; font-size: 14px; }
         input {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #e0e0e0;
+            border: 1px solid #1e2d4a;
             border-radius: 8px;
             font-size: 14px;
             outline: none;
+            background: #0d1526;
+            color: #e0eaf5;
             transition: border-color 0.3s;
         }
-        input:focus { border-color: #2E4057; }
+        input:focus { border-color: #f0c040; }
+        input::placeholder { color: #445566; }
         .btn {
             width: 100%;
             padding: 14px;
-            background: #2E4057;
-            color: white;
+            background: #f0c040;
+            color: #0a0e1a;
             border: none;
             border-radius: 8px;
             font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
+            transition: background 0.3s;
         }
-        .btn:hover { background: #1a2a3a; }
+        .btn:hover { background: #d4a820; }
         .register-link {
             text-align: center;
             margin-top: 20px;
-            color: #888;
+            color: #8899aa;
             font-size: 14px;
         }
-        .register-link a { color: #2E4057; font-weight: bold; text-decoration: none; }
+        .register-link a { color: #f0c040; font-weight: bold; text-decoration: none; }
         .error {
-            background: #ffe0e0;
-            color: #c00;
+            background: #2a1010;
+            color: #ff6b6b;
             padding: 10px;
             border-radius: 6px;
             font-size: 14px;
             margin-bottom: 15px;
+            border: 1px solid #4a1515;
         }
     </style>
 </head>

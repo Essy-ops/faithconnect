@@ -6,100 +6,82 @@
     <title>FaithConnect - Prayer Requests</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f5f7fa; min-height: 100vh; }
+        body { font-family: Arial, sans-serif; background: #0a0e1a; min-height: 100vh; color: #e0eaf5; }
         .navbar {
-            background: #2E4057;
+            background: #111827;
             padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 2px solid #f0c040;
         }
-        .navbar h1 { color: white; font-size: 22px; }
-        .navbar .nav-links a {
-            color: white;
+        .navbar h1 { color: #f0c040; font-size: 22px; }
+        .nav-links a {
+            color: #c0d0e0;
             text-decoration: none;
             margin-left: 20px;
             font-size: 14px;
         }
-        .navbar .nav-links a:hover { color: #f0c040; }
+        .nav-links a:hover { color: #f0c040; }
         .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .page-title { color: #2E4057; font-size: 26px; margin-bottom: 25px; }
+        .page-title { color: #f0c040; font-size: 26px; margin-bottom: 25px; }
         .form-card {
-            background: white;
+            background: #111827;
             border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             margin-bottom: 30px;
+            border: 1px solid #1e2d4a;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
-        .form-card h3 { color: #2E4057; margin-bottom: 20px; font-size: 18px; }
+        .form-card h3 { color: #f0c040; margin-bottom: 20px; }
         textarea {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #e0e0e0;
+            border: 1px solid #1e2d4a;
             border-radius: 8px;
             font-size: 14px;
             font-family: Arial, sans-serif;
             outline: none;
             resize: vertical;
             min-height: 120px;
+            background: #0d1526;
+            color: #e0eaf5;
         }
-        textarea:focus { border-color: #2E4057; }
+        textarea:focus { border-color: #f0c040; }
+        textarea::placeholder { color: #445566; }
         .btn {
             margin-top: 15px;
             padding: 12px 30px;
-            background: #2E4057;
-            color: white;
+            background: #f0c040;
+            color: #0a0e1a;
             border: none;
             border-radius: 8px;
             font-size: 15px;
+            font-weight: bold;
             cursor: pointer;
         }
-        .btn:hover { background: #1a2a3a; }
-        .prayer-list h3 { color: #2E4057; margin-bottom: 15px; font-size: 18px; }
+        .btn:hover { background: #d4a820; }
+        .prayer-list h3 { color: #f0c040; margin-bottom: 15px; }
         .prayer-item {
-            background: white;
+            background: #111827;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-            border-left: 4px solid #2E4057;
+            border: 1px solid #1e2d4a;
+            border-left: 4px solid #f0c040;
         }
-        .prayer-item p { color: #444; font-size: 15px; line-height: 1.6; }
+        .prayer-item p { color: #c0d0e0; font-size: 15px; line-height: 1.6; }
         .prayer-item .meta {
             margin-top: 10px;
             font-size: 12px;
-            color: #aaa;
+            color: #445566;
             display: flex;
             justify-content: space-between;
         }
-        .status-pending {
-            background: #fff3cd;
-            color: #856404;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-        }
-        .status-responded {
-            background: #d1e7dd;
-            color: #0f5132;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-        }
-        .success {
-            background: #d1e7dd;
-            color: #0f5132;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #aaa;
-            font-size: 13px;
-        }
+        .status-pending { background: #2a2000; color: #f0c040; padding: 3px 10px; border-radius: 20px; font-size: 12px; }
+        .status-responded { background: #002a10; color: #40c070; padding: 3px 10px; border-radius: 20px; font-size: 12px; }
+        .success { background: #002a10; color: #40c070; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 14px; border: 1px solid #004020; }
+        footer { text-align: center; padding: 20px; color: #445566; font-size: 13px; border-top: 1px solid #1e2d4a; margin-top: 30px; }
     </style>
 </head>
 <body>
@@ -109,14 +91,13 @@
             <a href="/dashboard/">Home</a>
             <a href="/prayer/">Prayer Requests</a>
             <a href="/chatbot/">AI Chatbot</a>
+            <a href="/announcements/">Announcements</a>
             <a href="/logout/">Logout</a>
         </div>
     </nav>
 
     <div class="container">
         <h2 class="page-title">🙏 Prayer Requests</h2>
-
-        <!-- SUBMIT FORM -->
         <div class="form-card">
             <h3>Submit a Prayer Request</h3>
             {% if messages %}
@@ -130,8 +111,6 @@
                 <button type="submit" class="btn">🙏 Submit Prayer Request</button>
             </form>
         </div>
-
-        <!-- MY PRAYER REQUESTS -->
         <div class="prayer-list">
             <h3>My Prayer Requests</h3>
             {% if prayers %}
@@ -149,10 +128,10 @@
                 </div>
                 {% endfor %}
             {% else %}
-                <p style="color:#aaa; font-size:14px;">You have not submitted any prayer requests yet.</p>
+                <p style="color:#445566; font-size:14px;">You have not submitted any prayer requests yet.</p>
             {% endif %}
         </div>
     </div>
-    <footer>✝ FaithConnect — Zetech University DAC Project © 2025</footer>
+    <footer>✝ FaithConnect.ke — Zetech University DAC Project © 2025</footer>
 </body>
 </html>

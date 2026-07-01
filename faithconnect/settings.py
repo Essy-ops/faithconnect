@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m@hi5!)2ap)xz+)m_h3c$v!m$kf)*p=*yu-m_cs8r^&!bssb!f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['faithconnect.ke', 'localhost', '127.0.0.1']
 
 
 # Application definition

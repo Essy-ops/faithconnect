@@ -35,3 +35,11 @@ class Attendance(models.Model):
 
     def __str__(self):
         return f"{self.member.username} - {self.event_name}"
+class SpiritualGuidance(models.Model):
+    question = models.TextField()
+    answer = models.TextField()
+    category = models.CharField(max_length=100)
+    verse_reference = models.CharField(max_length=100)
+
+    def __str__(self):
+        return str(self.question)[:50]
